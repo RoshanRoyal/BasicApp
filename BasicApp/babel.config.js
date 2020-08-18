@@ -1,10 +1,10 @@
 const path = require('path');
 const env = require('./env');
 
-const frameworkAlias = { 
+const frameworkAlias = {
 };
 
-const frameworkInternalAlias = { 
+const frameworkInternalAlias = {
 };
 
 const moduleResolverConfig = {
@@ -17,14 +17,15 @@ const moduleResolverConfig = {
 
 module.exports = function (api) {
   api.cache(true);
-
-  const presets = [
-    'babel-preset-expo',
-  ];
-
-  const plugins = [
-    ['module-resolver', moduleResolverConfig],
-  ];
-
-  return { presets, plugins };
+  return {
+    presets: ['babel-preset-expo'],
+    plugins: [
+      ['module-resolver', moduleResolverConfig]
+    ],
+    env: {
+      production: {
+        plugins: ['react-native-paper/babel'],
+      },
+    },
+  };
 };

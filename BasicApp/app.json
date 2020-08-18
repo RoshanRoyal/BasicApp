@@ -3,7 +3,7 @@
     "name": "BasicApp",
     "slug": "basic-app",
     "version": "1.0.0",
-    "sdkVersion": "36.0.0",
+    "sdkVersion": "38.0.0",
     "description": "Demo Application",  
     "privacy": "public",
     "platforms": [

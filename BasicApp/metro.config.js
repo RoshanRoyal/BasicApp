@@ -1,9 +1,9 @@
-const path = require('path');
-const env = require('./env');
+// /* eslint-disable import/no-commonjs */
 
-const appModules = [
-  //path.resolve(env.EVA_PACKAGES_PATH, 'dss'), 
-];
+const path = require('path');
+
+const root = path.resolve(__dirname, '..');
+ 
 
 const extraNodeModules = {
   '@babel/runtime': path.resolve(__dirname, './node_modules/@babel/runtime'),
@@ -28,7 +28,21 @@ const extraNodeModules = {
 };
 
 module.exports = {
-  projectRoot: path.resolve(__dirname),
-  resolver: { extraNodeModules },
-  watchFolders: appModules,
+  projectRoot: __dirname,
+  watchFolders: [root],
+
+  // We need to make sure that only one version is loaded for peerDependencies
+  // So we blacklist them at the root, and alias them to the versions in example's node_modules
+  resolver: {
+    extraNodeModules
+  },
+
+  transformer: {
+    getTransformOptions: async () => ({
+      transform: {
+        experimentalImportSupport: false,
+        inlineRequires: true,
+      },
+    }),
+  },
 };
