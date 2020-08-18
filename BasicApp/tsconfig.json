@@ -7,9 +7,9 @@
     "jsx": "react",
     "experimentalDecorators": true,
     "lib": [
-      "esnext",
+      "es6",
       "dom"
-    ], 
+    ],
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
@@ -17,8 +17,7 @@
     "skipLibCheck": true,
     "typeRoots": [
       "./node_modules/@types"
-    ],
-    "paths": {}
+    ]
   },
   "exclude": [
     "./node_modules",
