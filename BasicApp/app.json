@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "BasicApp",
+    "slug": "basic-app",
+    "version": "1.0.0",
+    "sdkVersion": "36.0.0",
+    "description": "Demo Application",  
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",  
+    "assetBundlePatterns": [
+      "src/assets/images/*",
+      "src/assets/fonts"
+    ],
+    "androidStatusBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#F7F9FC"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
+  }
+}
